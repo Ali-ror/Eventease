@@ -28,6 +28,13 @@ Rails.application.routes.draw do
   get "dashboard", to: "dashboard#show", as: :dashboard
   get "notifications", to: "notifications#index", as: :notifications
 
+  namespace :admin do
+    get "login", to: "sessions#new", as: :login
+    post "login", to: "sessions#create"
+    delete "logout", to: "sessions#destroy", as: :logout
+    get "dashboard", to: "dashboard#show", as: :dashboard
+  end
+
   root "pages#landing"
   get "landing", to: "pages#landing"
 end

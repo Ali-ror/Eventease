@@ -1,0 +1,10 @@
+<div class="min-h-screen flex items-center justify-center px-6 py-16 bg-cream">
+  <div class="bg-white rounded-xl border border-gray-200 shadow-lg p-8 text-center max-w-md w-full">
+    <h1 class="font-heading text-2xl font-semibold text-charcoal">Admin Successfully Logged In</h1>
+    <p class="font-body text-gray-600 mt-3">Development in progress.</p>
+
+    <div class="mt-6">
+      <%= button_to "Logout", admin_logout_path, method: :delete, form: { class: "inline-block" }, class: "font-body text-sm text-primary hover:text-primary/80 transition bg-transparent border-0 p-0 cursor-pointer underline-offset-2 hover:underline" %>
+    </div>
+  </div>
+</div>

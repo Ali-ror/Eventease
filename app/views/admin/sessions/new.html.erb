@@ -1,0 +1,26 @@
+<%= render layout: "shared/admin_auth_shell" do %>
+  <p class="font-body text-xs font-semibold tracking-widest uppercase text-primary mb-3">MANAGEMENT CONSOLE</p>
+  <h2 class="font-heading text-2xl font-semibold text-charcoal">Welcome Back</h2>
+  <p class="font-body text-gray-600 mt-2 text-sm">Enter your administrative credentials to access the console.</p>
+
+  <%= form_with url: admin_login_path, method: :post, class: "space-y-5 mt-8" do |f| %>
+    <div>
+      <%= label_tag :email, "Admin Email", class: "block text-sm font-medium font-body text-charcoal mb-1.5" %>
+      <%= email_field_tag :email, params[:email], autofocus: true, autocomplete: "email", placeholder: "admin@eventease.com", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white" %>
+    </div>
+
+    <div>
+      <div class="flex items-center justify-between mb-1.5">
+        <%= label_tag :password, "Security Key / Password", class: "block text-sm font-medium font-body text-charcoal" %>
+        <%= link_to "Forgot Password?", forgot_password_path, class: "text-sm font-body text-primary hover:text-primary/80 transition" %>
+      </div>
+      <%= password_field_tag :password, nil, autocomplete: "current-password", placeholder: "Enter your password", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-white" %>
+    </div>
+
+    <%= submit_tag "Login to Admin Console", class: "w-full bg-primary text-white font-body font-semibold py-3 rounded-lg hover:bg-primary/90 transition shadow-sm cursor-pointer" %>
+  <% end %>
+
+  <p class="font-body text-xs text-gray-500 mt-6 text-center">
+    Admin access only. Unauthorized access is prohibited.
+  </p>
+<% end %>

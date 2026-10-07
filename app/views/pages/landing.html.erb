@@ -12,60 +12,7 @@
 </head>
 <body class="bg-surface font-body-md text-on-surface">
 
-  <!-- Header / Navbar (with updated SVG logo) -->
-  <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-    <div class="h-20 max-w-7xl mx-auto px-margin-sm lg:px-margin flex items-center justify-between">
-      <div class="flex items-center gap-space-lg">
-        <a class="flex items-center gap-space-sm" data-path="marketplace-explore" href="#">
-          <!-- Updated SVG Logo -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="180" height="45">
-            <defs>
-              <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7B4DB5"/>
-                <stop offset="100%" stop-color="#552B88"/>
-              </linearGradient>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#F2D06B"/>
-                <stop offset="100%" stop-color="#D4AF37"/>
-              </linearGradient>
-              <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
-              </filter>
-            </defs>
-            <g transform="translate(15, 10)">
-              <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#purpleGrad)" filter="url(#subtleShadow)"/>
-              <path d="M 22 24 L 56 24 C 59.3 24 62 26.7 62 30 C 62 33.3 59.3 36 56 36 L 33 36 C 30.8 36 29 37.8 29 40 L 29 60 C 29 62.2 30.8 64 33 64 L 56 64 C 59.3 64 62 66.7 62 70 C 62 73.3 59.3 76 56 76 L 22 76 C 18.7 76 16 73.3 16 70 L 16 30 C 16 26.7 18.7 24 22 24 Z" fill="#FFFFFF"/>
-              <path d="M 24 45 L 48 45 C 50.8 45 53 47.2 53 50 C 53 52.8 50.8 55 48 55 L 24 55 Z" fill="url(#goldGrad)"/>
-              <path d="M 64 18 Q 64 25 71 25 Q 64 25 64 32 Q 64 25 57 25 Q 64 25 64 18 Z" fill="url(#goldGrad)"/>
-            </g>
-            <text x="115" y="60" font-family="'Epilogue', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#241B35">
-              Event<tspan fill="#6B3FA0" font-weight="700">Ease</tspan>
-            </text>
-            <text x="117" y="78" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="2.5" fill="#958E9E" text-transform="uppercase">
-              CURATED CELEBRATIONS
-            </text>
-          </svg>
-        </a>
-        <nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg">
-          <a aria-current="page" class="px-space-md py-space-sm font-label-lg transition-colors bg-primary-container text-on-primary rounded-lg" data-path="marketplace-explore" href="#">Explore Vendors</a>
-          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="venues-spaces" href="#">Venues</a>
-          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="catering-culinary" href="#">Catering</a>
-          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="planners-designers" href="#">Planners</a>
-          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="event-packages" href="#">Curated Packages</a>
-        </nav>
-      </div>
-      <div class="flex items-center gap-space-md">
-        <a class="hidden sm:inline-flex items-center px-space-md py-space-sm rounded-lg bg-surface-container-low text-primary font-label-lg text-label-lg hover:bg-surface-container hover:text-primary transition-colors" data-path="vendor-onboarding" href="#">Become a Vendor</a>
-        <div class="h-6 w-px bg-surface-container-high hidden sm:block"></div>
-        <a class="flex items-center gap-space-sm pl-space-xs" data-path="client-dashboard" href="#">
-          <img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNe6rPX6Nztixc25L9ALTBAufg3YLfXiFLNgWJ6YGl73yWs8HRh3VQg4rRW6dLxgkqPACSGBMU7E57omS1MsejQYGXxDwu_u1usmh_wcIWALPqh6KTVD69_A7igN2MCmj0aDCQzwes1H79ld0rqIVf1uyDw77SgaQTSqfqxug2aOqrfbtO76DUAUlmMuv_vxOFWeRLqYvqPZu0woZ3GHU-GydaU81ft0uhRHsMTb5bDzhnoWqb-gIM">
-          <span class="material-symbols-outlined text-on-surface-variant text-base">expand_more</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main class="w-full pt-20 bg-surface">
+  <main class="w-full bg-surface">
     <div class="flex flex-col w-full">
 
       <!-- Top Navigation Bar (secondary, with updated SVG logo and routing) -->
@@ -297,50 +244,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Minimal Footer (with updated SVG logo) -->
-      <footer class="w-full bg-surface-container-lowest py-space-lg shadow-sm">
-        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin flex flex-col sm:flex-row items-center justify-between gap-space-md">
-          <div class="flex items-center gap-space-sm">
-            <!-- Updated SVG Logo -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="130" height="32.5">
-              <defs>
-                <linearGradient id="purpleGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#7B4DB5"/>
-                  <stop offset="100%" stop-color="#552B88"/>
-                </linearGradient>
-                <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#F2D06B"/>
-                  <stop offset="100%" stop-color="#D4AF37"/>
-                </linearGradient>
-                <filter id="subtleShadow3" x="-10%" y="-10%" width="120%" height="120%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
-                </filter>
-              </defs>
-              <g transform="translate(15, 10)">
-                <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#purpleGrad3)" filter="url(#subtleShadow3)"/>
-                <path d="M 22 24 L 56 24 C 59.3 24 62 26.7 62 30 C 62 33.3 59.3 36 56 36 L 33 36 C 30.8 36 29 37.8 29 40 L 29 60 C 29 62.2 30.8 64 33 64 L 56 64 C 59.3 64 62 66.7 62 70 C 62 73.3 59.3 76 56 76 L 22 76 C 18.7 76 16 73.3 16 70 L 16 30 C 16 26.7 18.7 24 22 24 Z" fill="#FFFFFF"/>
-                <path d="M 24 45 L 48 45 C 50.8 45 53 47.2 53 50 C 53 52.8 50.8 55 48 55 L 24 55 Z" fill="url(#goldGrad3)"/>
-                <path d="M 64 18 Q 64 25 71 25 Q 64 25 64 32 Q 64 25 57 25 Q 64 25 64 18 Z" fill="url(#goldGrad3)"/>
-              </g>
-              <text x="115" y="60" font-family="'Epilogue', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#241B35">
-                Event<tspan fill="#6B3FA0" font-weight="700">Ease</tspan>
-              </text>
-              <text x="117" y="78" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="2.5" fill="#958E9E" text-transform="uppercase">
-                CURATED CELEBRATIONS
-              </text>
-            </svg>
-            <span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 EventEase. All rights reserved.</span>
-          </div>
-          <nav class="flex items-center flex-wrap gap-space-lg">
-            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
-            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
-            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#privacy">Privacy</a>
-            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#fraud-policy">Scam/Fraud Policy</a>
-          </nav>
-        </div>
-      </footer>
-
     </div>
   </main>
 
@@ -404,7 +307,7 @@
       </div>
     </div>
     <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin mt-space-xl pt-space-md flex flex-col md:flex-row items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
-      <p>© 2025 EventEase Marketplace Inc. All rights reserved.</p>
+      <p>© 2026 EventEase Marketplace Inc. All rights reserved.</p>
       <div class="flex items-center gap-space-lg mt-space-sm md:mt-0">
         <a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
         <a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
