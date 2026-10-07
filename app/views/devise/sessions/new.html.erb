@@ -1,0 +1,25 @@
+<%= render layout: "shared/auth_shell", locals: { active_tab: :login } do %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= form_for(resource, as: resource_name, url: login_path, html: { class: "space-y-5" }) do |f| %>
+    <div>
+      <%= f.label :email, "Email", class: "block text-sm font-medium font-body text-charcoal mb-1.5" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" %>
+    </div>
+
+    <div>
+      <div class="flex items-center justify-between mb-1.5">
+        <%= f.label :password, "Password", class: "block text-sm font-medium font-body text-charcoal" %>
+        <%= link_to "Forgot Password?", forgot_password_path, class: "text-sm font-body text-primary hover:text-primary/80 transition" %>
+      </div>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter your password", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" %>
+    </div>
+
+    <%= f.submit "Login", class: "w-full bg-primary text-white font-body font-semibold py-3 rounded-lg hover:bg-primary/90 transition shadow-sm cursor-pointer" %>
+  <% end %>
+
+  <p class="text-center text-sm font-body text-gray-600 mt-6">
+    Don't have an account?
+    <%= link_to "Sign Up", signup_path, class: "text-primary font-medium hover:text-primary/80 transition" %>
+  </p>
+<% end %>

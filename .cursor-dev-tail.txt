@@ -1,0 +1,35 @@
+16:18:41 web.1  | Puma starting in single mode...
+16:18:41 web.1  | * Puma version: 8.0.2 ("Into the Arena")
+16:18:41 web.1  | * Ruby version: ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x86_64-linux]
+16:18:41 web.1  | *  Min threads: 5
+16:18:41 web.1  | *  Max threads: 5
+16:18:41 web.1  | *  Environment: development
+16:18:41 web.1  | *          PID: 10894
+16:18:41 web.1  | * Listening on http://127.0.0.1:3000
+16:18:41 web.1  | * Listening on http://[::1]:3000
+16:18:41 web.1  | Use Ctrl-C to stop
+16:18:43 css.1  | exited with code 0
+16:18:43 system | sending SIGTERM to all processes
+16:18:43 web.1  | - Gracefully stopping, waiting for requests to finish
+16:18:43 web.1  | Exiting
+16:18:43 web.1  | terminated by SIGTERM
+actionpack (7.2.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.2.7) lib/rack/method_override.rb:28:in `call'
+rack (3.2.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.7) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.3) lib/rails/engine.rb:535:in `call'
+puma (8.0.2) lib/puma/configuration.rb:305:in `call'
+puma (8.0.2) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.2) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.2) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.2) lib/puma/server.rb:508:in `process_client'
+puma (8.0.2) lib/puma/server.rb:263:in `block in run'
+puma (8.0.2) lib/puma/thread_pool.rb:246:in `block in spawn_thread'

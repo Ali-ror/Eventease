@@ -1,0 +1,16 @@
+<%= render layout: "shared/auth_shell", locals: { title: "Forgot Password" } do %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= form_for(resource, as: resource_name, url: forgot_password_path, html: { class: "space-y-5", method: :post }) do |f| %>
+    <div>
+      <%= f.label :email, "Email", class: "block text-sm font-medium font-body text-charcoal mb-1.5" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" %>
+    </div>
+
+    <%= f.submit "Send Reset Link", class: "w-full bg-primary text-white font-body font-semibold py-3 rounded-lg hover:bg-primary/90 transition shadow-sm cursor-pointer" %>
+  <% end %>
+
+  <p class="text-center text-sm font-body text-gray-600 mt-6">
+    <%= link_to "Back to Login", login_path, class: "text-primary font-medium hover:text-primary/80 transition" %>
+  </p>
+<% end %>

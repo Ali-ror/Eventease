@@ -1,0 +1,21 @@
+<div class="max-w-xl mx-auto px-6 py-16">
+  <div class="bg-white rounded-xl border border-gray-200 shadow-lg p-8 text-center">
+    <h1 class="font-heading text-2xl font-semibold text-charcoal">Successfully Logged In</h1>
+    <p class="font-body text-gray-600 mt-3">Development in progress.</p>
+
+    <dl class="mt-8 text-left space-y-3 font-body text-sm">
+      <div class="flex justify-between gap-4 border-b border-gray-100 pb-2">
+        <dt class="text-gray-500">Name</dt>
+        <dd class="text-charcoal font-medium"><%= current_user.name %></dd>
+      </div>
+      <div class="flex justify-between gap-4 border-b border-gray-100 pb-2">
+        <dt class="text-gray-500">Email</dt>
+        <dd class="text-charcoal font-medium"><%= current_user.email %></dd>
+      </div>
+      <div class="flex justify-between gap-4">
+        <dt class="text-gray-500">Role</dt>
+        <dd class="text-charcoal font-medium capitalize"><%= current_view_mode %></dd>
+      </div>
+    </dl>
+  </div>
+</div>

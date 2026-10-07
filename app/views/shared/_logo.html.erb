@@ -1,0 +1,6 @@
+<%# locals: (link: nil, class_name: "") %>
+<% href = local_assigns.fetch(:link, root_path) %>
+<% extra = local_assigns.fetch(:class_name, "") %>
+<%= link_to href, class: "inline-block font-heading text-2xl font-bold text-primary #{extra}" do %>
+  EventEase
+<% end %>

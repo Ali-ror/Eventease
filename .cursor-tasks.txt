@@ -1,0 +1,4 @@
+bin/rails tailwindcss:build    # Build your Tailwind CSS
+bin/rails tailwindcss:clobber  # Remove CSS builds
+bin/rails tailwindcss:install  # Install Tailwind CSS into the app
+bin/rails tailwindcss:watch    # Watch and build your Tailwind CSS on file changes

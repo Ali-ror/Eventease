@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+export DATABASE_HOST="${DATABASE_HOST-}"
+export DATABASE_USERNAME="${DATABASE_USERNAME:-$(whoami)}"
+
+if ! gem list foreman -i --silent; then
+  echo "Installing foreman..."
+  gem install foreman
+fi
+
+exec foreman start -f Procfile.dev "$@"

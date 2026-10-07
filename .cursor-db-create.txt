@@ -1,0 +1,3 @@
+Created database 'eventease_development'
+Created database 'eventease_test'
+EXIT:True

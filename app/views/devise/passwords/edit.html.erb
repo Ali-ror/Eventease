@@ -1,0 +1,23 @@
+<%= render layout: "shared/auth_shell", locals: { title: "Reset Password" } do %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= form_for(resource, as: resource_name, url: reset_password_path, html: { class: "space-y-5", method: :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token, value: params[:reset_password_token] %>
+
+    <div>
+      <%= f.label :password, "New Password", class: "block text-sm font-medium font-body text-charcoal mb-1.5" %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "Enter new password", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" %>
+    </div>
+
+    <div>
+      <%= f.label :password_confirmation, "Confirm New Password", class: "block text-sm font-medium font-body text-charcoal mb-1.5" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm new password", class: "w-full rounded-lg border border-gray-200 px-4 py-2.5 font-body text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" %>
+    </div>
+
+    <%= f.submit "Reset Password", class: "w-full bg-primary text-white font-body font-semibold py-3 rounded-lg hover:bg-primary/90 transition shadow-sm cursor-pointer" %>
+  <% end %>
+
+  <p class="text-center text-sm font-body text-gray-600 mt-6">
+    <%= link_to "Back to Login", login_path, class: "text-primary font-medium hover:text-primary/80 transition" %>
+  </p>
+<% end %>

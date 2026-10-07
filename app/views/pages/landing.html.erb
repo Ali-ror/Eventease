@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+  <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+  <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+
+  <!-- Header / Navbar (with updated SVG logo) -->
+  <header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-margin-sm lg:px-margin flex items-center justify-between">
+      <div class="flex items-center gap-space-lg">
+        <a class="flex items-center gap-space-sm" data-path="marketplace-explore" href="#">
+          <!-- Updated SVG Logo -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="180" height="45">
+            <defs>
+              <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7B4DB5"/>
+                <stop offset="100%" stop-color="#552B88"/>
+              </linearGradient>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F2D06B"/>
+                <stop offset="100%" stop-color="#D4AF37"/>
+              </linearGradient>
+              <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+              </filter>
+            </defs>
+            <g transform="translate(15, 10)">
+              <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#purpleGrad)" filter="url(#subtleShadow)"/>
+              <path d="M 22 24 L 56 24 C 59.3 24 62 26.7 62 30 C 62 33.3 59.3 36 56 36 L 33 36 C 30.8 36 29 37.8 29 40 L 29 60 C 29 62.2 30.8 64 33 64 L 56 64 C 59.3 64 62 66.7 62 70 C 62 73.3 59.3 76 56 76 L 22 76 C 18.7 76 16 73.3 16 70 L 16 30 C 16 26.7 18.7 24 22 24 Z" fill="#FFFFFF"/>
+              <path d="M 24 45 L 48 45 C 50.8 45 53 47.2 53 50 C 53 52.8 50.8 55 48 55 L 24 55 Z" fill="url(#goldGrad)"/>
+              <path d="M 64 18 Q 64 25 71 25 Q 64 25 64 32 Q 64 25 57 25 Q 64 25 64 18 Z" fill="url(#goldGrad)"/>
+            </g>
+            <text x="115" y="60" font-family="'Epilogue', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#241B35">
+              Event<tspan fill="#6B3FA0" font-weight="700">Ease</tspan>
+            </text>
+            <text x="117" y="78" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="2.5" fill="#958E9E" text-transform="uppercase">
+              CURATED CELEBRATIONS
+            </text>
+          </svg>
+        </a>
+        <nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg">
+          <a aria-current="page" class="px-space-md py-space-sm font-label-lg transition-colors bg-primary-container text-on-primary rounded-lg" data-path="marketplace-explore" href="#">Explore Vendors</a>
+          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="venues-spaces" href="#">Venues</a>
+          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="catering-culinary" href="#">Catering</a>
+          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="planners-designers" href="#">Planners</a>
+          <a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="event-packages" href="#">Curated Packages</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <a class="hidden sm:inline-flex items-center px-space-md py-space-sm rounded-lg bg-surface-container-low text-primary font-label-lg text-label-lg hover:bg-surface-container hover:text-primary transition-colors" data-path="vendor-onboarding" href="#">Become a Vendor</a>
+        <div class="h-6 w-px bg-surface-container-high hidden sm:block"></div>
+        <a class="flex items-center gap-space-sm pl-space-xs" data-path="client-dashboard" href="#">
+          <img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNe6rPX6Nztixc25L9ALTBAufg3YLfXiFLNgWJ6YGl73yWs8HRh3VQg4rRW6dLxgkqPACSGBMU7E57omS1MsejQYGXxDwu_u1usmh_wcIWALPqh6KTVD69_A7igN2MCmj0aDCQzwes1H79ld0rqIVf1uyDw77SgaQTSqfqxug2aOqrfbtO76DUAUlmMuv_vxOFWeRLqYvqPZu0woZ3GHU-GydaU81ft0uhRHsMTb5bDzhnoWqb-gIM">
+          <span class="material-symbols-outlined text-on-surface-variant text-base">expand_more</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+
+      <!-- Top Navigation Bar (secondary, with updated SVG logo and routing) -->
+      <header class="w-full bg-surface-container-lowest shadow-sm z-40 sticky top-0">
+        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin h-20 flex items-center justify-between">
+          <div class="flex items-center">
+            <!-- Updated SVG Logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="160" height="40">
+              <defs>
+                <linearGradient id="purpleGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#7B4DB5"/>
+                  <stop offset="100%" stop-color="#552B88"/>
+                </linearGradient>
+                <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F2D06B"/>
+                  <stop offset="100%" stop-color="#D4AF37"/>
+                </linearGradient>
+                <filter id="subtleShadow2" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+                </filter>
+              </defs>
+              <g transform="translate(15, 10)">
+                <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#purpleGrad2)" filter="url(#subtleShadow2)"/>
+                <path d="M 22 24 L 56 24 C 59.3 24 62 26.7 62 30 C 62 33.3 59.3 36 56 36 L 33 36 C 30.8 36 29 37.8 29 40 L 29 60 C 29 62.2 30.8 64 33 64 L 56 64 C 59.3 64 62 66.7 62 70 C 62 73.3 59.3 76 56 76 L 22 76 C 18.7 76 16 73.3 16 70 L 16 30 C 16 26.7 18.7 24 22 24 Z" fill="#FFFFFF"/>
+                <path d="M 24 45 L 48 45 C 50.8 45 53 47.2 53 50 C 53 52.8 50.8 55 48 55 L 24 55 Z" fill="url(#goldGrad2)"/>
+                <path d="M 64 18 Q 64 25 71 25 Q 64 25 64 32 Q 64 25 57 25 Q 64 25 64 18 Z" fill="url(#goldGrad2)"/>
+              </g>
+              <text x="115" y="60" font-family="'Epilogue', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#241B35">
+                Event<tspan fill="#6B3FA0" font-weight="700">Ease</tspan>
+              </text>
+              <text x="117" y="78" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="2.5" fill="#958E9E" text-transform="uppercase">
+                CURATED CELEBRATIONS
+              </text>
+            </svg>
+          </div>
+          <div class="flex items-center gap-space-md">
+            <!-- Routing for Login and Sign Up -->
+            <a class="px-space-md py-space-sm font-label-lg text-label-lg text-primary hover:bg-surface-container-low transition-colors rounded-lg" href="/login">
+              Login
+            </a>
+            <a class="px-space-lg py-space-sm font-label-lg text-label-lg bg-primary-container text-on-primary rounded-lg shadow-md hover:bg-primary transition-all" href="/signup">
+              Sign Up
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="w-full bg-surface py-space-xl lg:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="lg:col-span-7 flex flex-col items-start text-left">
+              <span class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-secondary-fixed text-on-secondary-container font-label-md text-label-md mb-space-md">
+                <span class="material-symbols-outlined text-sm">verified</span>
+                Curated Event Marketplace
+              </span>
+              <h1 class="font-headline-xl text-display-lg lg:text-[48px] lg:leading-[56px] text-on-surface font-bold tracking-tight mb-space-md">
+                Plan Every Event with <span class="text-secondary">Ease</span>
+              </h1>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-xl">
+                Effortlessly discover verified, premier vendors for unforgettable weddings, milestone birthdays, corporate gatherings, and intimate private celebrations.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md w-full sm:w-auto">
+                <a class="w-full sm:w-auto text-center px-space-lg py-3.5 font-label-lg text-label-lg bg-primary-container text-on-primary rounded-lg shadow-md hover:bg-primary transition-all" href="#find-vendors">
+                  Find Vendors
+                </a>
+                <a class="w-full sm:w-auto text-center px-space-lg py-3.5 font-label-lg text-label-lg bg-secondary text-on-secondary rounded-lg shadow-md hover:bg-on-secondary-container transition-all" href="#list-business">
+                  List Your Business
+                </a>
+              </div>
+              <div class="flex items-center gap-space-lg mt-space-xl pt-space-md">
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-secondary text-lg">check_circle</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">100% Vetted Professionals</span>
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-secondary text-lg">shield</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Secure Bookings</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-5 relative mt-space-lg lg:mt-0">
+              <div class="relative w-full rounded-xl overflow-hidden bg-surface-container-lowest shadow-xl">
+                <img class="w-full h-80 lg:h-[400px] object-cover" data-alt="An elegant luxury celebration banquet hall decorated with gentle golden fairy lights, crystal glassware, purple and cream floral centerpieces, soft ambient twilight illumination, high-end editorial composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRUJrPwPMEcXA60y5k14hNoWjPYH3a8Q1oKLhFY-23UkfxzIXm-WExJ9xKMHaJRV0tJz8V10eag02nhxDtEkPCVyP777eiGcg2nqNxVtZFhEKRz7pkkyTi1edpcs__7F4sGp1yYmjcQFY2E2xCr_5THrE_F1iY-bme_KDs_nQTSInYhslbvzvLRln6Ifj8au_vtfMqJGKFhMJggDjrGEfNsr_nLN8Ggw4KwlquQKA_RpkYHx9cSmls">
+                <div class="absolute bottom-4 left-4 right-4 p-space-md bg-surface-container-lowest/95 backdrop-blur-md rounded-lg shadow-md flex items-center justify-between">
+                  <div>
+                    <p class="font-label-md text-label-md text-secondary uppercase tracking-wider">Premier Choice</p>
+                    <h4 class="font-headline-sm text-headline-sm text-on-surface">The Grand Atrium &amp; Gardens</h4>
+                  </div>
+                  <div class="flex items-center text-secondary font-label-lg text-label-lg">
+                    <span class="material-symbols-outlined text-base mr-1">star</span>
+                    4.96
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vendor Categories -->
+      <section class="w-full bg-surface-container-low py-space-xl">
+        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin">
+          <div class="mb-space-lg">
+            <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Browse Expertise</p>
+            <h2 class="font-headline-md text-headline-md text-on-surface mt-space-xs">Vendor Categories</h2>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-gutter-sm lg:gap-gutter">
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+                <span class="material-symbols-outlined text-2xl">apartment</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Venues</span>
+              <span class="font-body-sm text-label-sm text-on-surface-variant mt-space-xs">Grand &amp; Boutique</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+                <span class="material-symbols-outlined text-2xl">restaurant</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Catering</span>
+              <span class="font-body-sm text-label-sm text-on-surface-variant mt-space-xs">Artisanal Dining</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+                <span class="material-symbols-outlined text-2xl">cake</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Cakes</span>
+              <span class="font-body-sm text-label-sm text-on-surface-variant mt-space-xs">Custom Patisserie</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+                <span class="material-symbols-outlined text-2xl">nest_eco_leaf</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Decorations</span>
+              <span class="font-body-sm text-label-sm text-on-surface-variant mt-space-xs">Floral &amp; Staging</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+                <span class="material-symbols-outlined text-2xl">photo_camera</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Photography</span>
+              <span class="font-body-sm text-label-sm text-on-surface-variant mt-space-xs">Visual Masters</span>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group cursor-pointer">
+              <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-space-sm group-hover:bg-primary group-hover:text-on-primary transition-colors text-primary">
+                <span class="material-symbols-outlined text-2xl">headphones</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">DJs</span>
+              <span class="font-body-sm text-label-sm text-on-surface-variant mt-space-xs">Sound &amp; Lighting</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="w-full bg-surface py-space-xl lg:py-24">
+        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin">
+          <div class="max-w-2xl mb-space-xl">
+            <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">A Seamless Journey</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">How It Works</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              Three effortless steps connecting you to unmatched professionals for your gathering.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter relative">
+            <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-space-lg">
+                  <span class="font-headline-lg text-display-lg text-primary/20 font-bold">01</span>
+                  <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined">search</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs mb-space-xs">
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Search</h3>
+                  <span class="material-symbols-outlined text-secondary text-base">arrow_forward</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Explore vetted, top-rated event vendors and venues tailored to your precise vision, capacity, and city.
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+                <span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+                <span>Vetted portfolios &amp; reviews</span>
+              </div>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-space-lg">
+                  <span class="font-headline-lg text-display-lg text-primary/20 font-bold">02</span>
+                  <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined">calendar_month</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs mb-space-xs">
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Book</h3>
+                  <span class="material-symbols-outlined text-secondary text-base">arrow_forward</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Connect directly, confirm quotes, and secure dates seamlessly with transparent pricing and agreements.
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+                <span class="material-symbols-outlined text-sm text-secondary">lock</span>
+                <span>Direct contact &amp; safe deposit</span>
+              </div>
+            </div>
+            <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-space-lg">
+                  <span class="font-headline-lg text-display-lg text-primary/20 font-bold">03</span>
+                  <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined">celebration</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-xs mb-space-xs">
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Celebrate</h3>
+                  <span class="material-symbols-outlined text-secondary text-base">task_alt</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Enjoy your unforgettable occasion with peace of mind, guided by certified masters of hospitality.
+                </p>
+              </div>
+              <div class="mt-space-lg pt-space-sm flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+                <span class="material-symbols-outlined text-sm text-secondary">thumb_up</span>
+                <span>Guaranteed satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Minimal Footer (with updated SVG logo) -->
+      <footer class="w-full bg-surface-container-lowest py-space-lg shadow-sm">
+        <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin flex flex-col sm:flex-row items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-sm">
+            <!-- Updated SVG Logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="130" height="32.5">
+              <defs>
+                <linearGradient id="purpleGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#7B4DB5"/>
+                  <stop offset="100%" stop-color="#552B88"/>
+                </linearGradient>
+                <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#F2D06B"/>
+                  <stop offset="100%" stop-color="#D4AF37"/>
+                </linearGradient>
+                <filter id="subtleShadow3" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+                </filter>
+              </defs>
+              <g transform="translate(15, 10)">
+                <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#purpleGrad3)" filter="url(#subtleShadow3)"/>
+                <path d="M 22 24 L 56 24 C 59.3 24 62 26.7 62 30 C 62 33.3 59.3 36 56 36 L 33 36 C 30.8 36 29 37.8 29 40 L 29 60 C 29 62.2 30.8 64 33 64 L 56 64 C 59.3 64 62 66.7 62 70 C 62 73.3 59.3 76 56 76 L 22 76 C 18.7 76 16 73.3 16 70 L 16 30 C 16 26.7 18.7 24 22 24 Z" fill="#FFFFFF"/>
+                <path d="M 24 45 L 48 45 C 50.8 45 53 47.2 53 50 C 53 52.8 50.8 55 48 55 L 24 55 Z" fill="url(#goldGrad3)"/>
+                <path d="M 64 18 Q 64 25 71 25 Q 64 25 64 32 Q 64 25 57 25 Q 64 25 64 18 Z" fill="url(#goldGrad3)"/>
+              </g>
+              <text x="115" y="60" font-family="'Epilogue', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#241B35">
+                Event<tspan fill="#6B3FA0" font-weight="700">Ease</tspan>
+              </text>
+              <text x="117" y="78" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="2.5" fill="#958E9E" text-transform="uppercase">
+                CURATED CELEBRATIONS
+              </text>
+            </svg>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 EventEase. All rights reserved.</span>
+          </div>
+          <nav class="flex items-center flex-wrap gap-space-lg">
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#privacy">Privacy</a>
+            <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#fraud-policy">Scam/Fraud Policy</a>
+          </nav>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Extended Footer (with updated SVG logo) -->
+  <footer class="w-full bg-surface-container-low pt-space-xl pb-space-xl">
+    <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      <div class="space-y-space-sm">
+        <div class="flex items-center gap-space-sm">
+          <!-- Updated SVG Logo -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="140" height="35">
+            <defs>
+              <linearGradient id="purpleGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7B4DB5"/>
+                <stop offset="100%" stop-color="#552B88"/>
+              </linearGradient>
+              <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F2D06B"/>
+                <stop offset="100%" stop-color="#D4AF37"/>
+              </linearGradient>
+              <filter id="subtleShadow4" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+              </filter>
+            </defs>
+            <g transform="translate(15, 10)">
+              <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#purpleGrad4)" filter="url(#subtleShadow4)"/>
+              <path d="M 22 24 L 56 24 C 59.3 24 62 26.7 62 30 C 62 33.3 59.3 36 56 36 L 33 36 C 30.8 36 29 37.8 29 40 L 29 60 C 29 62.2 30.8 64 33 64 L 56 64 C 59.3 64 62 66.7 62 70 C 62 73.3 59.3 76 56 76 L 22 76 C 18.7 76 16 73.3 16 70 L 16 30 C 16 26.7 18.7 24 22 24 Z" fill="#FFFFFF"/>
+              <path d="M 24 45 L 48 45 C 50.8 45 53 47.2 53 50 C 53 52.8 50.8 55 48 55 L 24 55 Z" fill="url(#goldGrad4)"/>
+              <path d="M 64 18 Q 64 25 71 25 Q 64 25 64 32 Q 64 25 57 25 Q 64 25 64 18 Z" fill="url(#goldGrad4)"/>
+            </g>
+            <text x="115" y="60" font-family="'Epilogue', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5" fill="#241B35">
+              Event<tspan fill="#6B3FA0" font-weight="700">Ease</tspan>
+            </text>
+            <text x="117" y="78" font-family="'Inter', sans-serif" font-size="11" font-weight="600" letter-spacing="2.5" fill="#958E9E" text-transform="uppercase">
+              CURATED CELEBRATIONS
+            </text>
+          </svg>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">The curated event marketplace connecting discerning hosts with premiere venues, planners, and culinary masters.</p>
+      </div>
+      <div>
+        <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Discover</h4>
+        <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" data-path="marketplace-explore" href="#">All Categories</a></li>
+          <li><a class="hover:text-primary transition-colors" data-path="venues-spaces" href="#">Luxury Venues</a></li>
+          <li><a class="hover:text-primary transition-colors" data-path="catering-culinary" href="#">Artisanal Catering</a></li>
+          <li><a class="hover:text-primary transition-colors" data-path="event-packages" href="#">VIP Packages</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Vendors</h4>
+        <ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" data-path="vendor-onboarding" href="#">List Your Service</a></li>
+          <li><a class="hover:text-primary transition-colors" data-path="vendor-portal" href="#">Vendor Portal</a></li>
+          <li><a class="hover:text-primary transition-colors" data-path="standards" href="#">Quality Guidelines</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm uppercase tracking-wider">Concierge</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Need assistance with private curation?</p>
+        <span class="font-label-md text-label-md text-secondary font-semibold">concierge@eventease.luxury</span>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-margin-sm lg:px-margin mt-space-xl pt-space-md flex flex-col md:flex-row items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+      <p>© 2025 EventEase Marketplace Inc. All rights reserved.</p>
+      <div class="flex items-center gap-space-lg mt-space-sm md:mt-0">
+        <a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+        <a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
